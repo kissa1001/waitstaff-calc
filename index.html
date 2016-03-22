@@ -9,11 +9,11 @@
 <body ng-app='waitstaff-calc'>
     <div class="container" ng-controller='waitstaffCtrl'>
         <h1>Enter the Meal Details</h1>
-        <form action="submit" name='calculator' ng-submit='submitForm($event);'>
+        <form name='calculator'>
             <p>Base Meal Price: <input type="number" name='price' ng-model='mealPrice' placeholder="price" required></p>
             <p>Tax Rate: <input type="number" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></p>
             <p>Percentage: <input type="number" name='percentage' ng-model='tipPer' placeholder="percentage" required></p>
-            <button type='submit'>Submit</button>
+            <button type='submit' ng-click="submitForm(); bool=true">Submit</button>
         </form>
         <div>
             <h1>Customer charges</h1>
