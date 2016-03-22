@@ -14,13 +14,19 @@
             <p>Tax Rate: <input type="number" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></p>
             <p>Percentage: <input type="number" name='percentage' ng-model='tipPer' placeholder="percentage" required></p>
             <button type='submit' ng-click="submitForm(); bool=true">Submit</button>
+            <button type="cancel" ng-click="cancelSubmit();">Cancel</button>
         </form>
         <div>
             <h1>Customer charges</h1>
             <p>Subtotal: ${{ total }}</p>
             <p>Tip: ${{tip}}</p>
             <p>Total: ${{subTotal}}</p>
-
+        </div>
+        <div>
+            <h1>My earning Info</h1>
+            <p>Tip Total: {{tipTotal}}</p>
+            <p>Meal Count: {{mealCount}}</p>
+            <p>Avg Tip Per Meal:{{avg}}</p>
         </div>
     </div>
     <script src="app.js" type="text/javascript"></script>
