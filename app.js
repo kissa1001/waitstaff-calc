@@ -1,7 +1,6 @@
 var app = angular.module('waitstaff-calc',[])
 	.controller('waitstaffCtrl', function($scope){
 		$scope.mealDetail = {};
-
 		$scope.tipTotal=0;
 		$scope.mealCount =0;
 		$scope.submitForm = function(){
@@ -12,7 +11,7 @@ var app = angular.module('waitstaff-calc',[])
 			$scope.tip  = $scope.total * $scope.mealDetail.tipPer;
 			$scope.subTotal = $scope.tip + $scope.total;
 			$scope.tipTotal += $scope.tip;
-			$scope.mealCount = $scope.mealCount++;
+			$scope.mealCount++;
 			$scope.avg=$scope.tipTotal/$scope.mealCount;
 			$scope.mealPrice = ''; 
 			$scope.taxRate = '';
@@ -22,6 +21,16 @@ var app = angular.module('waitstaff-calc',[])
 		$scope.cancelSubmit=function(){
      		$scope.mealPrice=null;
      		$scope.taxRate=null;
-     		$scope.tipPercent=null;
-		}
+     		$scope.tipPer=null;
+		};
+
+		$scope.resetAll=function(){
+			$scope.cancelSubmit();
+			$scope.total= null;
+			$scope.tip = null;
+			$scope.subTotal= null ;
+			$scope.tipTotal= null;
+			$scope.mealCount=null;
+			$scope.avg = null;
+		};
 });

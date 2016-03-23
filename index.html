@@ -11,10 +11,10 @@
         <h1>Enter the Meal Details</h1>
         <form name='calculator'>
             <p>Base Meal Price: <input type="number" name='price' ng-model='mealPrice' placeholder="price" required></p>
-            <p>Tax Rate: <input type="number" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></p>
-            <p>Percentage: <input type="number" name='percentage' ng-model='tipPer' placeholder="percentage" required></p>
+            <p>Tax Rate(%): <input type="number" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></p>
+            <p>Tip Percentage(%): <input type="number" name='percentage' ng-model='tipPer' placeholder="percentage" required></p>
             <button type='submit' ng-click="submitForm(); bool=true">Submit</button>
-            <button type="cancel" ng-click="cancelSubmit();">Cancel</button>
+            <button name="cancel" ng-click="cancelSubmit();">Cancel</button>
         </form>
         <div>
             <h1>Customer charges</h1>
@@ -28,6 +28,7 @@
             <p>Meal Count: {{mealCount}}</p>
             <p>Avg Tip Per Meal:{{avg}}</p>
         </div>
+        <button name="reset" ng-click="reset();">Reset</button>
     </div>
     <script src="app.js" type="text/javascript"></script>
 </body>
