@@ -24,7 +24,7 @@ var app = angular.module('waitstaff-calc',[])
      		$scope.tipPer=null;
 		};
 
-		$scope.resetAll=function(){
+		$scope.reset=function(){
 			$scope.cancelSubmit();
 			$scope.total= null;
 			$scope.tip = null;
