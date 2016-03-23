@@ -19,9 +19,9 @@
                 <h2>Enter the Meal Details</h2>
                 <hr class="small"><br>
                 <form name='calculator'>
-                    <h4>Base Meal Price: <input class="form-control" type="number" name='price' ng-model='mealPrice' placeholder="price" required></h4>
-                    <h4>Tax Rate(%): <input type="number" class="form-control" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></h4>
-                    <h4>Tip Percentage(%): <input type="number" class="form-control" name='percentage' ng-model='tipPer' placeholder="percentage" required></h4>
+                    <h4>Base Meal Price: <input class="form-control" type="number" name='price' ng-model='mealPrice' placeholder="price"></h4>
+                    <h4>Tax Rate(%): <input type="number" class="form-control" name='tax-rate' ng-model='taxRate' placeholder="tax rate"></h4>
+                    <h4>Tip Percentage(%): <input type="number" class="form-control" name='percentage' ng-model='tipPer' placeholder="percentage"></h4>
                     <div class="buttons">
                         <button class="btn btn-success" type='submit' ng-click="submitForm(); bool=true">Submit</button>
                         <button class="btn btn-warning" name="cancel" ng-click="cancelSubmit();">Cancel</button>
@@ -33,16 +33,16 @@
                 <div>
                     <h2>Customer charges</h2>
                     <hr class="small">
-                    <h4>Subtotal: ${{ total }}</h4>
-                    <h4>Tip: ${{tip}}</h4>
-                    <h4>Total: ${{subTotal}}</h4>
+                    <h4>Subtotal: {{ total | currency}}</h4>
+                    <h4>Tip: {{tip | currency}}</h4>
+                    <h4>Total: {{subTotal | currency}}</h4>
                 </div>
                 <div>
                     <h2>My earning Info</h2>
                     <hr class="small">
-                    <h4>Tip Total: {{tipTotal}}</h4>
+                    <h4>Tip Total: {{tipTotal | currency}}</h4>
                     <h4>Meal Count: {{mealCount}}</h4>
-                    <h4>Avg Tip Per Meal:{{avg}}</h4>
+                    <h4>Avg Tip Per Meal:{{avg | currency}}</h4>
                 </div>
             </div>
         </div>
