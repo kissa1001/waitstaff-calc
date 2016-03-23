@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Waitstaff Calculator</title>
-    <!-- note that here we’re linking to a CDN version of Angular  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Righteous' rel='stylesheet' type='text/css'>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
 </head>
 <body ng-app='waitstaff-calc'>
     <div class="container" ng-controller='waitstaffCtrl'>
-        <h1>Enter the Meal Details</h1>
-        <form name='calculator'>
-            <p>Base Meal Price: <input type="number" name='price' ng-model='mealPrice' placeholder="price" required></p>
-            <p>Tax Rate(%): <input type="number" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></p>
-            <p>Tip Percentage(%): <input type="number" name='percentage' ng-model='tipPer' placeholder="percentage" required></p>
-            <button type='submit' ng-click="submitForm(); bool=true">Submit</button>
-            <button name="cancel" ng-click="cancelSubmit();">Cancel</button>
-        </form>
-        <div>
-            <h1>Customer charges</h1>
-            <p>Subtotal: ${{ total }}</p>
-            <p>Tip: ${{tip}}</p>
-            <p>Total: ${{subTotal}}</p>
+        <div class="row text-center">
+            <h1>Waitstaff Calculator</h1>
         </div>
-        <div>
-            <h1>My earning Info</h1>
-            <p>Tip Total: {{tipTotal}}</p>
-            <p>Meal Count: {{mealCount}}</p>
-            <p>Avg Tip Per Meal:{{avg}}</p>
+        <div class="row text-center">
+            <div class="col-sm-5 border" id="meal-details">
+                <h2>Enter the Meal Details</h2>
+                <hr class="small"><br>
+                <form name='calculator'>
+                    <h4>Base Meal Price: <input class="form-control" type="number" name='price' ng-model='mealPrice' placeholder="price" required></h4>
+                    <h4>Tax Rate(%): <input type="number" class="form-control" name='tax-rate' ng-model='taxRate' placeholder="tax rate" required></h4>
+                    <h4>Tip Percentage(%): <input type="number" class="form-control" name='percentage' ng-model='tipPer' placeholder="percentage" required></h4>
+                    <div class="buttons">
+                        <button class="btn btn-success" type='submit' ng-click="submitForm(); bool=true">Submit</button>
+                        <button class="btn btn-warning" name="cancel" ng-click="cancelSubmit();">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 border" id="meal-calc">
+                <div>
+                    <h2>Customer charges</h2>
+                    <hr class="small">
+                    <h4>Subtotal: ${{ total }}</h4>
+                    <h4>Tip: ${{tip}}</h4>
+                    <h4>Total: ${{subTotal}}</h4>
+                </div>
+                <div>
+                    <h2>My earning Info</h2>
+                    <hr class="small">
+                    <h4>Tip Total: {{tipTotal}}</h4>
+                    <h4>Meal Count: {{mealCount}}</h4>
+                    <h4>Avg Tip Per Meal:{{avg}}</h4>
+                </div>
+            </div>
         </div>
-        <button name="reset" ng-click="reset();">Reset</button>
+        <div class="row text-center">
+            <button class="btn btn-primary" style="margin-top:1em; width:10em; height:3em; font-size:1.5em;" name="reset" ng-click="reset();">Reset</button>
+        </div>
     </div>
     <script src="app.js" type="text/javascript"></script>
 </body>
