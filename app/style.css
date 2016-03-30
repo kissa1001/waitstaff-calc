@@ -6,8 +6,33 @@ body{
 body h1{
 	color:#fff;
 	font-family: 'Righteous', cursive;
+	font-size:4em;
 }
 
+.links{
+	margin-top:1em;
+	font-size:2em;
+}
+.links a{
+	margin-right: 1em;
+	color:#fff;
+}
+.home{
+	max-width: 800px;
+}
+.home p{
+	font-size: 1.5em;
+}
+
+.view{
+	margin-top: 1.5em;
+}
+.meal{
+	max-width: 800px;
+}
+.earnings{
+	max-width: 800px;
+}
 .small{
 	border: 0;
     height: 1px;

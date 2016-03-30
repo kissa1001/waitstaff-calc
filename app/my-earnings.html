@@ -1,0 +1,14 @@
+<div class="earnings container text-center" ng-controller='EarningsCtrl'>
+    <div class="border" id="meal-calc">
+        <div>
+            <h2>My earning Info</h2>
+            <hr class="small">
+            <h4>Tip Total: {{waiter.tiptotal() | currency}}</h4>
+            <h4>Meal Count: {{waiter.mealcount()}}</h4>
+            <h4>Avg Tip Per Meal:{{waiter.averagetip() | currency}}</h4>
+        </div>
+        <div class="row text-center">
+            <button class="btn btn-lg btn-primary" style="margin-top:1em;width:5em;" name="reset" ng-click="onReset();">Reset</button>
+        </div>
+    </div>   
+</div>
