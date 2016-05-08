@@ -1,5 +1,6 @@
-<div class="meal container text-center row border" id="new-meal" ng-controller='MealCtrl'>
-    <div class="col-sm-6" id="meal-details">
+<div class="meal container text-center" ng-controller='MealCtrl'>
+    <div class="row border" id="new-meal">
+        <div class="col-sm-6" id="meal-details">
         <h2>Enter the Meal Details</h2>
         <hr class="small"><br>
         <form name='calculator'>
@@ -24,5 +25,6 @@
         <h4>Subtotal: {{ meal.subtotal() | currency}}</h4>
         <h4>Tip: {{meal.tip() | currency}}</h4>
         <h4>Total: {{meal.total() | currency}}</h4>
+    </div>
     </div>
 </div>
