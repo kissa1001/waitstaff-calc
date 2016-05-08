@@ -1,5 +1,5 @@
-<div class="meal container text-center" ng-controller='MealCtrl'>
-    <div class="border" id="meal-details">
+<div class="meal container text-center row" ng-controller='MealCtrl'>
+    <div class="border col-sm-6" id="meal-details">
         <h2>Enter the Meal Details</h2>
         <hr class="small"><br>
         <form name='calculator'>
@@ -17,12 +17,12 @@
                 <button class="btn btn-warning" name="cancel" ng-click="cancelSubmit();">Cancel</button>
             </div>
         </form>
-        <div>
-            <h2>Customer charges</h2>
-            <hr class="small">
-            <h4>Subtotal: {{ meal.subtotal() | currency}}</h4>
-            <h4>Tip: {{meal.tip() | currency}}</h4>
-            <h4>Total: {{meal.total() | currency}}</h4>
-        </div>
+    </div>
+    <div class="col-sm-6">
+        <h2>Customer charges</h2>
+        <hr class="small">
+        <h4>Subtotal: {{ meal.subtotal() | currency}}</h4>
+        <h4>Tip: {{meal.tip() | currency}}</h4>
+        <h4>Total: {{meal.total() | currency}}</h4>
     </div>
 </div>
